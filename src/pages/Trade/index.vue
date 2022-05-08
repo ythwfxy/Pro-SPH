@@ -110,7 +110,7 @@ import {mapState} from 'vuex'
       }),
       //提交订单时选中 地址
       userDeafultAddress(){
-        return this.addressInfo.find(item=>item.isDefault==1)
+        return this.addressInfo.find(item=>item.isDefault==1)||{}
       }
     },
     methods: {

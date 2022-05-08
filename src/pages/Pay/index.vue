@@ -103,7 +103,6 @@ import QRCode from 'qrcode'
     methods: {
         async getPayInfo(){
           let result=await this.$API.reqPayInfo(this.orderId)
-          console.log(result)
           if(result.code==200){
             this.payInfo=result.data
           }
@@ -112,11 +111,15 @@ import QRCode from 'qrcode'
         async open(){
           let url=await QRCode.toDataURL(this.payInfo.codeUrl)
           this.$alert(`<img src=${url} />`, '请微信支付', {
+          dangerouslyUseHTMLString: true,
           confirmButtonText: '确定',
           showCancelButton:true,
           cancelButtonText:"支付遇见问题",
           confirmButtonText:"已支付成功",
           showClose:false,
+          Center:true,
+          center:true,
+          roundButton:true,
           beforeClose:(type,instance,done)=>{
             if(type=='cancel'){
               alert('请联系管理员')
@@ -124,12 +127,12 @@ import QRCode from 'qrcode'
               this.timer=null
               done()
             }else{
-              if(this.code==200){
+              //if(this.code==200){
                 clearInterval(this.timer)
                 this.timer=null
                 done()
                 this.$router.push('/paysuccess')
-              }
+              
             }
           }
         });
@@ -143,7 +146,7 @@ import QRCode from 'qrcode'
                 this.$msbox.close()
                 this.$router.push('/paysuccess')
               }
-            })
+            },5000)
           }
         }
       },

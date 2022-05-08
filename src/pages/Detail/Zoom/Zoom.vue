@@ -22,10 +22,11 @@ export default {
   computed:{
     imgObj(){
       return this.skuImageList[this.currentIndex]||{}
+      
     }
   },
   mounted(){
-    //全局事件总线：获取兄弟组件传递过来的索引值
+    //全局事件总线：获取兄弟组件传递过来的索引值\
     this.$bus.$on('getIndex',(index)=>{
         //修改当前响应式数据
         this.currentIndex = index;

@@ -22,7 +22,7 @@
         <!-- 左侧放大镜区域 -->
         <div class="previewWrap">
           <!--放大镜效果-->
-          <Zoom :skuImageList="skuInfo.skuImageList" />
+          <Zoom :skuImageList="skuImageList" />
           <!-- 小图列表 -->
           <ImageList :skuImageList="skuInfo.skuImageList" />
         </div>
@@ -361,6 +361,9 @@ export default {
   },
   computed: {
     ...mapGetters(["categoryView", "skuInfo", "spuSaleAttrList"]),
+    skuImageList(){
+      return this.skuInfo.skuImageList||[]
+    }
   },
   methods: {
     changeActive(saleAttrValue,arr){
