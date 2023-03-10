@@ -105,7 +105,7 @@ import {mapState} from 'vuex'
     },
     computed:{
       ...mapState({
-        addressInfo:state=>state.trade.address,
+        addressInfo:state=>state.trade.addressInfo,
         orderInfo:state=>state.trade.orderInfo
       }),
       //提交订单时选中 地址

@@ -1,27 +1,6 @@
-# app
+# 项目名称：电商平台
 
-## Project setup
-```
-npm install
-```
+项目描述：该项目是一个电商平台，拥有推荐界面、登录注册、购物车、搜索功能和用户个人中心。用户可以根据关键词和所选范围进行搜索，将商品加入个人购物车并生成交易单号进行付款。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-"# Projectsph" 
-"# Projectsph" 
-"# Pro-SPH" 
+测试账号:13700000000
+密码:111111
